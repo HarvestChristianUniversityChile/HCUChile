@@ -84,5 +84,96 @@ ${mensaje}
             return false;
         });
     }
+    // Función para el popup de métodos de pago
+function initPaymentPopup() {
+    const pagoBtn = document.getElementById('btn-pago');
+    const pagoPopup = document.getElementById('popup-pago');
+    const closePago = document.getElementById('close-pago');
     
+    if (pagoBtn && pagoPopup) {
+        // Abrir popup
+        pagoBtn.addEventListener('click', function() {
+            pagoPopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Cerrar popup
+        closePago.addEventListener('click', function() {
+            pagoPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Cerrar al hacer click fuera del popup
+        pagoPopup.addEventListener('click', function(e) {
+            if (e.target === pagoPopup) {
+                pagoPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && pagoPopup.classList.contains('active')) {
+                pagoPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+}
+
+// Llamar la función en DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tu código existente ...
+    
+    // Inicializar popup de métodos de pago
+    initPaymentPopup();
+});
+// Función para cerrar el popup
+function cerrarPopup() {
+    const pagoPopup = document.getElementById('popup-pago');
+    if (pagoPopup) {
+        pagoPopup.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Función para el popup de métodos de pago
+function initPaymentPopup() {
+    const pagoBtn = document.getElementById('btn-pago');
+    const pagoPopup = document.getElementById('popup-pago');
+    const closePago = document.getElementById('close-pago');
+    
+    if (pagoBtn && pagoPopup) {
+        // Abrir popup
+        pagoBtn.addEventListener('click', function() {
+            pagoPopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Cerrar popup
+        closePago.addEventListener('click', cerrarPopup);
+        
+        // Cerrar al hacer click fuera del popup
+        pagoPopup.addEventListener('click', function(e) {
+            if (e.target === pagoPopup) {
+                cerrarPopup();
+            }
+        });
+        
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && pagoPopup.classList.contains('active')) {
+                cerrarPopup();
+            }
+        });
+    }
+}
+
+// Llamar la función en DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tu código existente ...
+    
+    // Inicializar popup de métodos de pago
+    initPaymentPopup();
+});
 }
