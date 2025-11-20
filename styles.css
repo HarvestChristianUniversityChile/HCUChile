@@ -44,33 +44,31 @@ header {
     padding: 15px 0;
 }
 
-/* Ajustes para el contenedor del logo */
 .logo-container {
     display: flex;
-    align-items: center; /* Esto centra verticalmente */
+    align-items: center;
 }
 
 .logo {
     height: 60px;
     margin-right: 15px;
     display: flex;
-    align-items: center; /* Centra la imagen verticalmente */
-    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-img {
-    height: 80px; /* Reduzco un poco la altura para dar espacio */
+    height: 80px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
     display: block;
 }
 
-/* Asegurar que el texto del logo también esté centrado */
 .logo-text {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el texto verticalmente */
+    justify-content: center;
 }
 
 .logo-title {
@@ -85,7 +83,6 @@ header {
     color: var(--text-color);
 }
 
-/* Ajustes específicos para el logo del footer */
 .footer-logo {
     height: 70px;
     margin-bottom: 20px;
@@ -95,11 +92,12 @@ header {
 }
 
 .footer-logo-img {
-    height: 100px; /* Reduzco un poco para el footer también */
+    height: 100px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
 }
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -168,24 +166,127 @@ section {
     background-color: var(--primary-color);
 }
 
+/* HERO CON BENEFICIOS */
 .hero {
     background: linear-gradient(rgba(133, 3, 91, 0.8), rgba(133, 3, 91, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
     background-position: center;
     color: var(--light-text);
-    text-align: center;
     padding: 150px 0;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.hero p {
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.hero-text p {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    max-width: 600px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.hero-benefits {
+    flex: 0 0 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-benefit-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border-left: 4px solid #85035b;
+}
+
+.hero-benefit-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #85035b, #6c0249);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.hero-benefit-content {
+    flex: 1;
+}
+
+.hero-benefit-content h4 {
+    color: #85035b;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.hero-benefit-content p {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.hero-benefit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #85035b;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-benefit-btn:hover {
+    background: #6c0249;
+    transform: translateY(-2px);
+}
+
+.hero-certification {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .btn {
@@ -228,6 +329,110 @@ section {
     background-color: #128C7E;
 }
 
+/* POPUP */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-container {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.popup-overlay.active .popup-container {
+    transform: scale(1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.popup-close:hover {
+    background: #6c0249;
+    transform: rotate(90deg);
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+    background: #f8f9fa;
+}
+
+.popup-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.popup-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.popup-info p {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.popup-actions .btn {
+    min-width: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* RESTANTE DEL CSS... */
 .programs-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -415,6 +620,7 @@ footer {
     transform: translateY(-3px);
 }
 
+/* RESPONSIVE */
 @media (max-width: 992px) {
     .programs-container {
         grid-template-columns: 1fr;
@@ -426,6 +632,31 @@ footer {
     
     .contact-info {
         padding-right: 0;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        text-align: center;
+    }
+    
+    .hero-text p {
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+    
+    .hero-benefits {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
     }
 }
 
@@ -455,228 +686,28 @@ footer {
         display: block;
     }
 
-    .hero h1 {
+    .hero {
+        padding: 120px 0;
+    }
+
+    .hero-text h1 {
         font-size: 2.5rem;
     }
     
     .logo-text {
         display: none;
     }
- /* HERO SLIDER */
-.hero {
-    background: linear-gradient(rgba(133, 3, 91, 0.8), rgba(133, 3, 91, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
-    color: var(--light-text);
-    text-align: center;
-    padding: 150px 0;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-
-}
-/* Sección de Beneficios */
-.benefits {
-    background-color: var(--accent-color);
-    padding: 80px 0;
-}
-
-.benefits-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.benefit-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border-top: 4px solid var(--primary-color);
-}
-
-.benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.benefit-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--primary-color), #6c0249);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    color: white;
-    font-size: 2rem;
-}
-
-.benefit-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-}
-
-.benefit-card p {
-    color: var(--text-color);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-/* Botones de beneficios */
-.btn-benefit {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.btn-benefit:hover {
-    background: #6c0249;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(133, 3, 91, 0.3);
-}
-
-/* Información de certificación */
-.certification-info {
-    background: linear-gradient(135deg, #28a745, #20c997);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-/* Popup de métodos de pago - MEJORADO */
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.popup-overlay.active {
-    display: flex;
-    opacity: 1;
-}
-
-.popup-container {
-    background: white;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 500px;
-    max-height: 90vh;
-    position: relative;
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.popup-overlay.active .popup-container {
-    transform: scale(1);
-}
-
-.popup-close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-}
-
-.popup-close:hover {
-    background: #6c0249;
-    transform: rotate(90deg);
-}
-
-.popup-image {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-    display: block;
-    background: #f8f9fa;
-}
-
-.popup-info {
-    padding: 25px;
-    text-align: center;
-}
-
-.popup-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-.popup-info p {
-    color: var(--text-color);
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-.popup-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.popup-actions .btn {
-    min-width: 180px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-/* Responsive para el popup */
-@media (max-width: 768px) {
+    
+    .hero-benefit-card {
+        padding: 20px;
+    }
+    
+    .hero-benefit-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
     .popup-container {
         width: 95%;
         margin: 20px;
@@ -702,6 +733,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 100px 0;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-benefit-card {
+        padding: 15px;
+        gap: 15px;
+    }
+    
     .popup-image {
         max-height: 250px;
     }
@@ -713,78 +757,4 @@ footer {
     .popup-info h3 {
         font-size: 1.2rem;
     }
-}
-.payment-methods {
-    list-style: none;
-    margin: 20px 0;
-}
-
-.payment-methods li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-color);
-}
-
-.payment-methods li:last-child {
-    border-bottom: none;
-}
-
-.payment-methods li i {
-    color: var(--primary-color);
-    width: 20px;
-}
-
-.contact-payment {
-    text-align: center;
-    font-style: italic;
-    color: #666;
-    margin: 20px 0;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .benefits-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .benefits-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefit-card {
-        padding: 30px 20px;
-    }
-    
-    .benefit-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-    }
-    
-    .popup-container {
-        width: 95%;
-        margin: 20px;
-    }
-}
-}}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-
-}
-
-
 }
