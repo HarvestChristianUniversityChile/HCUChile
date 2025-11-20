@@ -51,6 +51,78 @@
         </div>
     </section>
 
+
+
+    <!-- Sección de Beneficios -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Nuestros Beneficios</h2>
+            <div class="benefits-container">
+                <!-- Botón 1: Pago Fácil con Popup -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Noticias</h3>
+                    <p>Mantente informado acerca de las fechas de inscripción e inicio de clases.</p>
+                    <button class="btn-benefit" id="btn-pago">
+                        <i class="fas fa-eye"></i> Ver Métodos Noticia
+                    </button>
+                </div>
+
+                <!-- Botón 2: Certificación (solo información) -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Certificación</h3>
+                    <p>Estudia seguro y ten tu diploma con certificación en USA.</p>
+                    <div class="certification-info">
+                        <i class="fas fa-check-circle"></i> Certificación Internacional
+                    </div>
+                </div>
+
+                <!-- Botón 3: Sitio Web Principal -->
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Sitio Oficial</h3>
+                    <p>Conoce más sobre Harvest Christian University a nivel internacional.</p>
+                    <a href="https://hc.university/" class="btn-benefit" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Visitar Sitio Web
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup para Métodos de Pago -->
+    <div class="popup-overlay" id="popup-pago">
+        <div class="popup-container">
+            <button class="popup-close" id="close-pago">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-content">
+                <img src="noti.png" alt="Información de Pagos HCU Chile" class="popup-image">
+                <div class="popup-info">
+                    <h3>Información de Pagos</h3>
+                    <p>Consulta nuestra imagen informativa sobre los métodos de pago y procesos disponibles en HCU Chile.</p>
+                    <div class="popup-actions">
+                        <a href="https://wa.me/56961269607?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20los%20métodos%20de%20pago%20de%20HCU%20Chile" 
+                           class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                        </a>
+                        <button class="btn btn-primary" onclick="cerrarPopup()">
+                            <i class="fas fa-check"></i> Entendido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Pie de página -->
 <footer>
     <div class="container">
