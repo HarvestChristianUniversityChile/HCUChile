@@ -12,11 +12,10 @@
     <header>
         <div class="container">
             <nav class="nav-container">
-<div class="logo-container">
-    <div class="logo">
-        <!-- Logo de la universidad -->
-        <img src="hcu.png" alt="Harvest Christian University Chile" class="logo-img">
-    </div>
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="hcu.png" alt="Harvest Christian University Chile" class="logo-img">
+                    </div>
                     <div class="logo-text">
                         <div class="logo-title">HARVEST CHRISTIAN UNIVERSITY</div>
                         <div class="logo-subtitle">Chile</div>
@@ -42,107 +41,100 @@
         </div>
     </header>
 
-       <!-- Sección Hero -->
+        <!-- Sección Hero con Beneficios -->
     <section id="inicio" class="hero">
         <div class="container">
-            <h1>Formación Teológica Integral</h1>
-            <p>Preparamos líderes y ministros con excelencia académica y compromiso espiritual para servir a la iglesia y la sociedad.</p>
-            <a href="programas.html" class="btn">Ver Programas</a>
-        </div>
-    </section>
-
-
-
-    <!-- Sección de Beneficios -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">Nuestros Beneficios</h2>
-            <div class="benefits-container">
-                <!-- Botón 1: Pago Fácil con Popup -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Noticias</h3>
-                    <p>Mantente informado acerca de las fechas de inscripción e inicio de clases.</p>
-                    <button class="btn-benefit" id="btn-pago">
-                        <i class="fas fa-eye"></i> Ver Métodos Noticia
-                    </button>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Formación Teológica Integral</h1>
+                    <p>Preparamos líderes y ministros con excelencia académica y compromiso espiritual para servir a la iglesia y la sociedad.</p>
+                    <a href="programas.html" class="btn">Ver Programas</a>
                 </div>
+                <div class="hero-benefits">
+                    <!-- Beneficio 1: Noticias -->
+                    <div class="hero-benefit-card">
+                        <div class="hero-benefit-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="hero-benefit-content">
+                            <h4>Noticias</h4>
+                            <p>Mira las últimas novedades y noticias</p>
+                            <button class="hero-benefit-btn" id="btn-noticias">
+                                <i class="fas fa-eye"></i> Ver Noticias
+                            </button>
+                        </div>
+                    </div>
 
-                <!-- Botón 2: Certificación (solo información) -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-award"></i>
+                    <!-- Beneficio 2: Certificación -->
+                    <div class="hero-benefit-card">
+                        <div class="hero-benefit-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="hero-benefit-content">
+                            <h4>Certificación USA</h4>
+                            <p>Diploma con certificación internacional</p>
+                            <div class="hero-certification">
+                                <i class="fas fa-check"></i> Garantizado
+                            </div>
+                        </div>
                     </div>
-                    <h3>Certificación</h3>
-                    <p>Estudia seguro y ten tu diploma con certificación en USA.</p>
-                    <div class="certification-info">
-                        <i class="fas fa-check-circle"></i> Certificación Internacional
-                    </div>
-                </div>
 
-                <!-- Botón 3: Sitio Web Principal -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-globe"></i>
+                    <!-- Beneficio 3: Sitio Web -->
+                    <div class="hero-benefit-card">
+                        <div class="hero-benefit-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="hero-benefit-content">
+                            <h4>Sitio Oficial</h4>
+                            <p>Conoce HCU internacional</p>
+                            <a href="https://hc.university/" class="hero-benefit-btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visitar
+                            </a>
+                        </div>
                     </div>
-                    <h3>Sitio Oficial</h3>
-                    <p>Conoce más sobre Harvest Christian University a nivel internacional.</p>
-                    <a href="https://hc.university/" class="btn-benefit" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Visitar Sitio Web
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Popup para Métodos de Pago -->
-    <div class="popup-overlay" id="popup-pago">
+    <!-- Popup para Noticias -->
+    <div class="popup-overlay" id="popup-noticias">
         <div class="popup-container">
-            <button class="popup-close" id="close-pago">
+            <button class="popup-close" id="close-noticias">
                 <i class="fas fa-times"></i>
             </button>
             <div class="popup-content">
-                <img src="noti.png" alt="Información de Pagos HCU Chile" class="popup-image">
+                <img src="noti.jpg" alt="Últimas Noticias HCU Chile" class="popup-image">
                 <div class="popup-info">
-                    <h3>Información de Pagos</h3>
-                    <p>Consulta nuestra imagen informativa sobre los métodos de pago y procesos disponibles en HCU Chile.</p>
-                    <div class="popup-actions">
-                        <a href="https://wa.me/56961269607?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20los%20métodos%20de%20pago%20de%20HCU%20Chile" 
-                           class="btn btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-                        </a>
-                        <button class="btn btn-primary" onclick="cerrarPopup()">
-                            <i class="fas fa-check"></i> Entendido
-                        </button>
-                    </div>
+                    <h3>Últimas Noticias</h3>
+                    <p>Mantente informado sobre las novedades y actualizaciones de Harvest Christian University Chile.</p>
+                    <button class="btn btn-primary" onclick="cerrarNoticias()">
+                        <i class="fas fa-times"></i> Cerrar
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 
-
     <!-- Pie de página -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <!-- Logo de la universidad -->
-                <img src="hcu2.png" alt="Harvest Christian University Chile" class="footer-logo-img">
-            </div>
-            <p>Harvest Christian University Chile</p>
-            <p>Formación Teológica Integral - Clases Virtuales y Presenciales</p>
-            <p>&copy; 2026 Harvest Christian University Chile. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/56961269607" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:patricio.alvarez.88@hotmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="hcu2.png" alt="Harvest Christian University Chile" class="footer-logo-img">
+                </div>
+                <p>Harvest Christian University Chile</p>
+                <p>Formación Teológica Integral - Clases Virtuales y Presenciales</p>
+                <p>&copy; 2026 Harvest Christian University Chile. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/56961269607" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:patricio.alvarez.88@hotmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="script.js"></script>
 </body>
